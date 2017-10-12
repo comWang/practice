@@ -15,9 +15,6 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
          incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud
          abore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud
-         consectetur adipiscing elit, sed do eiusmod tempor
-         incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud
-         abore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud
         </p>
     </div> 
 
@@ -53,15 +50,15 @@
 
 
 <!--轮播图-->
-<div id="showbox" class="container-full row">
-    <div class="leader last" onclick="last()"> << </div>
-    <div class="leader next" onclick="next()"> >> </div>
-<!--轮播展示图start-->
-    <div class="show-picture" style="background-image:url(images/a1.jpg)"></div>
-    <div class="show-picture" style="background-image:url(images/a2.jpg)"></div>
-    <div class="show-picture" style="background-image:url(images/a3.jpg)"></div>
-    <div class="show-picture" style="background-image:url(images/a4.jpg)"></div>
-<!--轮播展示图end-->
+<div class="relative">
+    <div class="leader last" onmouseup="last()"> << </div>
+    <div class="leader next" onmouseup="next()"> >> </div>
+ <div id="showbox">
+    <div class="show-picture" style="background-image:url(images/a1.jpg)">1</div>
+    <div class="show-picture" style="background-image:url(images/a2.jpg)">2</div>
+    <div class="show-picture" style="background-image:url(images/a3.jpg)">3</div>
+    <div class="show-picture" style="background-image:url(images/a4.jpg)">4</div>
+ </div>
 </div>
 
 
@@ -152,12 +149,6 @@
 
 
 <section class="subject relative">
-  <div id="info-block"class="info-block">
-    <div class="bg-green button rect-round button-danger" onclick="closeInfo()">关闭</div>
-    <img src="images/card1.jpg"class="attention"alt="is wechat" />
-    <img src="images/card1.jpg"class="attention"alt="is sina" />
-    <img src="images/card1.jpg"class="attention"alt="is twitter" />
-  </div>
   <div id="info-content"class="info-content">
       <div>
           <div class="ad-content bg-3">
@@ -204,11 +195,11 @@
 
   <div id="footerm"class="footer-middle">
     <div class="relative col-4 var-0 bg">
-    <img src="images/wechat.png" class="var-1" alt="wechat"onmouseover="info(0)" />关注微信</div>
+    <img src="images/wechat.png" class="var-1" alt="wechat"/>关注微信</div>
     <div class="relative col-4 var-0 bg">
-    <img src="images/sina.png" class="var-1" alt="sina"onmouseover="info(1)" />关注微博</div>
+    <img src="images/sina.png" class="var-1" alt="sina"/>关注微博</div>
     <div class="relative col-4 var-0 bg">
-    <img src="images/twitter.png" class="var-1" alt="twitter"onmouseover="info(2)" />推特我们</p></div>
+    <img src="images/twitter.png" class="var-1" alt="twitter"/>推特我们</p></div>
   </div>
 
 
