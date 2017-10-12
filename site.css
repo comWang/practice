@@ -9,7 +9,7 @@ h6{font-weight:500;font-size:1.1em;}
 p{font-size:1em;line-height: 1.5em}
 p~p{margin:32px auto}
 h1,h2,h3,h4,h5,h6{margin-bottom: 16px}
-body{color:#5f5f5f;background-color:#f1f1f1;overflow-x:hidden}
+body{color:#4d4d4d;background-color:#f1f1f1;overflow-x:hidden}
 a{text-decoration: none;color:#5f5f5f}
 a:hover{color:#39b262}
 ul li{list-style-type:none}
@@ -53,7 +53,7 @@ ul li{list-style-type:none}
 .border{position:absolute;bottom:2px;width:0;height:2px;background-color: #f1f1f1;transition: width .6s}
 .border-right{border-right: 1px solid #eeeeee}
 .border-bottom{border-bottom: 1px solid #eeeeee}
-.button{width:200px;height:40px;text-align: center;line-height: 40px;color:white;margin:10px 30px}
+.button{width:150px;height:40px;text-align: center;line-height: 40px;color:white;margin:auto}
 .button:hover{cursor: pointer}
 .button-danger{background-color: #fd5b78}
 .card{width:30%;margin:auto 1.5%;position: relative}
@@ -81,7 +81,7 @@ img.info-icons{max-width: 32px;max-height: 32px}
 div.info-icons{margin:auto 16px}
 div.info-icons img{max-width: 48px;max-height: 48px}
 .info-icons:hover{cursor:pointer}
-.leader{width:5%;height:100%;position: absolute;z-index: 1;line-height:400px;text-align: center;color:#eeeeee;}   
+.leader{width:5%;height:100%;position: absolute;z-index: 2;line-height:400px;text-align: center;color:#eeeeee;}   
 .leader.last{left:0}
 .leader.next{right:0}
 .leader:hover{cursor:pointer;background-color:rgba(0,0,0,0.5)}
@@ -117,13 +117,15 @@ span.menu-button:hover{cursor: pointer}
 .var-1{position:absolute;left:0;right:0;bottom:-30px;margin:auto}
 .var-1:hover{cursor: pointer}
 .show-picture{
-    position:absolute;width:80%;height:100%;left:10%;background-size: cover;
-    background-repeat: no-repeat;background-position: center;z-index: 0;
+    position:absolute;width:80%;height:100%;background-size: cover;
+    background-repeat: no-repeat;background-position: center;z-index:1;
 }
 .show-content{
-    text-align: center;background-color: rgba(255,255,255,0.6);width:80%;overflow: hidden;color:#5f5f5f;
-    padding:16px;position:absolute;bottom:0;left: 0;right: 0;margin:auto;font-size: 1.2em
+    text-align: center;background-color: rgba(255,255,255,0.8);width:500px;overflow: hidden;visibility:hidden;z-index: 1;
+    padding:40px 16px;position:absolute;bottom:0;left: 0;right: 0;margin:auto;font-size: 1.2em;
+    transition: bottom .6s ease-in-out,visibility .3s;height:200px;
 }
+.show-content .button{position: absolute;bottom: 32px;left:0;right: 0}
 .test{border:1px solid black}
 
 /**********************ID***********************/
@@ -133,7 +135,7 @@ li.nav {
 }
  #nav{background-color: white;transition: max-height .6s ease-in-out} 
 a:hover~.border{background-color: #39b262;width:70px}
-#showbox{position: relative;overflow: hidden;width:100%;height: 450px;padding:0}
+#showbox{position: relative;height: 500px;padding:0;transition: left .6s ease-out}
 #totop {width:48px;height:48px;border-radius: 50%;background-color:rgba(0,0,0,0.3);
         position: fixed;z-index: 3;right:0;
 }
@@ -180,10 +182,11 @@ a:hover~.border{background-color: #39b262;width:70px}
     li.nav{height:80px;line-height: 80px;}
 }
 @media screen and (max-width: 800px) {
+    .show-content{display:none}
     .half{width:100%}
     #showbox{height: 220px}
     .leader{line-height: 220px}
-    .container-full{padding:16px}
+    .container-full{padding:0}
     #nav{max-height: 60px;overflow: hidden} 
     #nav ul li:last-child{position: absolute;right:20px;top:0}
     li.nav{display:block;height:60px;line-height: 60px} 
