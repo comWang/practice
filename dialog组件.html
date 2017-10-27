@@ -1,0 +1,97 @@
+<!DOCTYPE>
+<html>
+    <head>
+    <meta charset="utf-8">    
+    <style>
+        body,div,p,h1{padding:0;margin:0;box-sizing: border-box}
+        .border{border:1px solid #333}
+        .head{width:100%;height:100px;text-align: center}
+        .side,.main{float:left;text-align: center;max-height: 300px;overflow-y: auto}
+        .block{height:500px;}
+        .side{width:20%}
+        .main{width:80%}
+        .padding{padding:16px}
+        .modal{position:fixed;z-index: 10;width: 100%;height:100%;background-color:rgba(0,0,0,0.6);padding-top: 100px}
+        .bg-white{background-color: #f1f1f1}
+        .bg-red{background-color:red}
+        .bg-green{background-color: rgb(10, 179, 86)}
+        .content{
+            position: absolute;left:0;right:0;top:50%;max-width: 500px;margin-left:auto;margin-right:auto;margin-top: -100px;}
+        .content>p{height:100px}
+        .border-top{border-radius: 20px 20px 0 0}
+        .border-bottom{border-radius:0 0 20px 20px}
+        .none{display: none}
+        .close {
+            position:absolute;width:30px;height:30px;left:50%;bottom:102%;margin-left: -15px;border:0;font-size: 18px;border-radius: 50%;
+            }
+        .row::after{content: '';clear: both}
+        @keyframes slide{
+            from {top:0;}
+            to{top:300px}
+        }
+    </style>
+    </head>
+    <body>
+        <div id="app">
+            <mydialog v-bind:head='modelHead' v-bind:contents='modelContents' v-bind:class="{none:model}"></mydialog>
+            <div class="head bg-white border">head</div>
+            <div class="row">
+                <div class="side bg-green border">side<div class="block"></div></div>
+                <div class="main bg-white border">main<div class="block"></div></div>
+            </div>
+            <button @click="toggleDialog">点击显示对话框(Vue实现)</button>
+            <button id='button'>点击显示对话框(jQuery实现)</button>
+        </div>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+
+        // vue实现
+        let child={
+              props:['head','contents'],
+              template:'<div class="modal"><div class="content"><h1 class="bg-green padding border-top">{{head}}</h1>'+
+              '<p class="padding border-bottom bg-white ">{{contents}}</p><button id="model-button" class="close">x</button></div></div>'
+          };
+
+        let study=new Vue({
+            el: '#app',
+            components:{
+                'mydialog':child
+            },
+            data: {
+                model:true,
+                modelHead:'模态框',
+                modelContents:'这里是一些文字,进行简单的描述这里是一些文字,进行简单的描述这里是一些文字,进行简单的描述',
+            },
+            methods:{
+                toggleDialog(){
+                    this.model=this.model?false:true;
+                }
+            }
+          })
+
+        let close=document.getElementById("model-button");
+        close.addEventListener('click',function(){study.model='true';});
+
+        
+//jquery实现
+        $(document).ready(function(){
+            let c=document.createElement('div');
+            let head='模态框';
+            let content="这里是一些文字,进行简单的描述jquery";
+            c.innerHTML='<div class="modal"><div class="content"><h1 class="bg-green padding border-top">'+
+            head+'</h1><p class="padding border-bottom bg-white ">'+content+'</p><button id="model2-button" class="close">x</button></div></div>'
+            c.className+='none';
+            $('#app').prepend(c);
+            $('#button').click(function(){
+                $(c).toggleClass('none');
+            });
+            $("#model2-button").click(function(){
+                $(c).toggleClass('none');
+            });
+        });
+
+    </script>
+    </body>
+</html>    
+            
