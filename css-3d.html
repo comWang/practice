@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <style>
+        .wrap{
+            perspective: 600px;
+        }
+        .container{
+            transform-style: preserve-3d;
+            width: 300px;
+            margin: auto;
+            margin-top: 150px;
+            animation: rotate 5s linear infinite ;
+        }
+        .fake-img{
+            position: absolute;
+            width:300px;
+            height:300px;
+            background-color: rgba(255, 0, 0, 0.3);
+            border: 1px solid red;
+        }
+        ._1{
+            transform:rotateY(0) translateZ(150px)
+        }
+        ._2{
+            transform:rotateY(90deg) translateZ(150px)
+        }
+        ._3{
+            transform:rotateY(180deg) translateZ(150px) 
+        }
+        ._4{
+            transform:rotateY(270deg) translateZ(150px) 
+        }
+        ._5{
+            transform:rotateX(90deg) translateZ(150px) 
+        }
+        ._6{
+            transform:rotateX(-90deg) translateZ(150px) 
+        }
+        @keyframes rotate{
+            from{transform: rotateY(0) rotateX(0)}
+            to{transform: rotateY(360deg) rotateX(360deg)}
+        }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="container">
+                <div class="fake-img _1">1</div>
+                <div class="fake-img _2">2</div>
+                <div class="fake-img _3">3</div>
+                <div class="fake-img _4">4</div>
+                <div class="fake-img _5">5</div>
+                <div class="fake-img _6">6</div>                
+            </div>
+        </div>
+    </body>
+</html>
