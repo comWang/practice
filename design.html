@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ch-zn-hans">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="basic.css">
+        <link rel="stylesheet" href="design.css">
+    </head>
+    <body>
+        <header class="bg-purple clear">
+            <div class="brand  container white">CREST ADMIN</div>
+            <div class="box">
+                <ul class="float-lt clear">
+                    <li class="float-lt container "><div class="fa fa-bars white"></div></li>
+                    <li class="float-lt  container"><div class="fa fa-envelope white"></div><span class="badge bg-red radius-50p">7</span></li>
+                    <li class="float-lt  container"><div class="fa fa-bell white"></div><span class="badge bg-red radius-50p">3</span></li>
+                    <li class="float-lt  container"><div class="fa fa-search white"></div></li>
+                </ul>
+                <ul class="float-gt clear">
+                    <li class="float-lt  container"><div class="radius-50p icon-32 bg-red"></div></li>
+                    <li class="float-lt  container white">Shane Taylor </li>
+                    <li class="float-lt  container"><div class="fa fa-comments white"></div><span class="badge bg-red radius-50p">9</span></li>
+                </ul>
+            </div>
+        </header>
+        <div id="body"class="body">
+            <aside class="side bg-white">
+                <div class="clear container">
+                    <div class="radius-50p bg-red icon-64 float-lt"></div>
+                    <div class="float-lt margin-lt-16">
+                        <big>Shane Taylor</big>
+                        <p class="small">Web Developer</p>
+                    </div>
+                </div>
+                <ul class="aside-list">
+                    <li class="container"><p class="small">Main</p></li>
+                    <li class="active container"><span class="fa fa-dashboard line-icon"></span>Dashboard
+                        <div class="float-gt fa fa-chevron-left"></div>
+                    </li>
+                    <li class="active container"><span class="fa fa-laptop line-icon"></span>Layouts
+                        <div class="float-gt fa fa-chevron-left"></div>
+                    </li>
+                </ul>
+                <ul class="aside-list">
+                    <li><p class="small">Applications</p></li>
+                    <li class="active container"><span class="fa fa-calendar line-icon"></span>Calendar
+                        <div class="float-gt fa fa-chevron-left"></div>
+                    </li>
+                    <li class="active container"><span class="fa fa-envelope line-icon"></span>Mailbox 
+                        <div id="test" class="float-gt fa fa-chevron-left"onclick="this.classList.toggle('open');this.parentNode.childNodes[6].classList.toggle('open');"></div>
+                        <div class="float-gt line-badge bg-red">4</div>
+                        <ul class="ul-active">
+                            <li class="child-list active">Inbox</li>
+                            <li class="child-list active">Compose</li>
+                        </ul>
+                    </li>
+                    <li class="active container"><span class="fa fa-comments line-icon"></span>Chat API
+                        <div class="float-gt fa fa-chevron-left"></div>
+                    </li>
+                    <li class="active container"><span class="fa fa-bullseye line-icon"></span>Widgets
+                        <div class="float-gt fa fa-chevron-left"></div>
+                    </li>
+                </ul>
+                <ul class="aside-list">
+                    <li class="container"><p class="small">Data Visualization</p>
+                        <div class="float-gt fa fa-chevron-left"></div>
+                    </li>
+                    <li class="active container"><span class="fa fa-bar-chart line-icon"></span>Echarts
+                        <div class="float-gt fa fa-chevron-left"></div>
+                        <div class="float-gt line-badge bg-red">HOT</div>
+                    </li>
+                    <li class="active container"><span class="fa fa-area-chart line-icon"></span>Morris Charts</li>
+                    <li class="active container"><span class="fa fa-line-chart line-icon"></span>Charts JS
+                        <div class="float-gt fa fa-chevron-left"></div>
+                    </li>
+                </ul>
+            </aside>
+            
+            <div class="box">
+                <div class="container bg-gray-light clear">
+                    <div class="tittle big float-lt">Mailbox</div>
+                    <div class="float-gt">
+                        <span class="small"><span class="fa fa-home"></span>Home /</span>
+                        <span class="small">Mail /</span>
+                        <span class="small">View</span>
+                    </div>
+                </div>
+
+                <div class=" bg-gray-light relative box clear">
+                        <ul class="float-lt container side list">
+                            <li class="big bg-purple container white" style="margin-bottom: 16px;">
+                                <div id="button"class="fa fa-arrow-circle-left white"onclick="this.classList.toggle('open');document.getElementById('body').classList.toggle('open')"></div> 
+                                Compose</li>
+                            <li class="container bg-white active"><span class="fa fa-inbox line-icon"></span> Inbox
+                                <div class="float-gt line-badge bg-purple radius-50p">6</div>
+                            </li>
+                            <li class="container bg-white active"><span class="fa fa-paper-plane line-icon"></span> Sent</li>
+                            <li class="container bg-white active"><span class="fa fa-pencil-square-o line-icon"></span> Drafts
+                                <div class="float-gt line-badge bg-red radius-50p">2</div>
+                            </li>
+                            <li class="container bg-white active"><span class="fa fa-star-o line-icon"></span> Important</li>
+                            <li class="container bg-white active"><span class="fa fa-trash-o line-icon"></span> Trash</li>
+                        </ul>
+                        <article class="container bg-white">
+                            <h1>View <span class="fa fa-refresh purple"style="font-size:1rem;margin:0 12px 0 12px"></span>
+                                <span class="fa fa-search purple"style="font-size:1rem;margin:0 12px 0 12px"></span>
+                                <div class="fa fa-cog purple float-gt" style="font-size: 1rem;"></div>
+                            </h1>
+                            <h1 class="clear">New Project Alloted to your team
+                                <ul class="float-gt">
+                                    <li class="float-lt fa fa-reply list-icon bg-gray-light" style="font-size: 1rem"></li>
+                                    <li class="float-lt fa fa-reply-all list-icon bg-gray-light" style="font-size: 1rem"></li>
+                                    <li class="float-lt fa fa-share list-icon bg-gray-light" style="font-size: 1rem"></li>
+                                    <li class="float-lt fa fa-link list-icon bg-gray-light" style="font-size: 1rem"></li>
+                                    <li class="float-lt fa fa-trash-o list-icon bg-gray-light" style="font-size: 1rem"></li>                                
+                                </ul>
+                            </h1>
+                            <h3 class="clear"><p class="float-lt">Bruce Wayne (brucewayne@example.com) to  You </p><p class="float-gt middle">12:40 PM, Today</p></h3>
+                            <p>Hello Jason,</p>
+                            <h2>What is Graphic Design?</h2>
+                            <P>Graphic home shde cnajs jw shuddn ffeae xkzhwi ussx eofduufds wjsuudh xbha sjjwje</P>
+                            <h2>Balance</h2>
+                            <p>beautiful girls all over the world,I could be chasing but my time would be wasted,
+                               they got nothing on you baby,nothing on you baby,nothing on you baby.
+                               they might say hi and i might say hey
+                            </p>
+                            <h2>Contrast</h2>
+                            <p>
+                               There's a girl but I let her get away,It's all my fault cause pride got in the way,
+                               And I'd be lying if I said I was ok,About that girl the one I let get away,
+                               I keep saying no,This can't be the way we're supposed to be...
+                            </p>
+                            <h1><span class="fa fa-link"></span> Attachment</h1>
+                            <div class="clear">
+                                <div class="float-lt display-img">
+                                    <div class="fake-img"></div>
+                                    <div class="clear">
+                                        <p class="float-lt middle">fakeImg.jpg</p><p class="float-gt small">0 KB</p>
+                                    </div>
+                                    <span class="middle text-ctr">View - Download</span>
+                                </div>
+                                <div class="float-lt display-img">
+                                    <div class="fake-img"></div>
+                                    <div class="clear">
+                                        <p class="float-lt middle">fakeImg.jpg</p><p class="float-gt small">0 KB</p>
+                                    </div>
+                                    <span class="middle text-ctr">View - Download</span>
+                                </div>
+                                <div class="float-lt display-img">
+                                    <div class="fake-img"></div>
+                                    <div class="clear">
+                                        <p class="float-lt middle">fakeImg.jpg</p><p class="float-gt small">0 KB</p>
+                                    </div>
+                                    <span class="middle text-ctr">View - Download</span>
+                                </div>
+                            </div>
+                            <textarea name="feedback" style="margin-top:16px;min-width: 100%;max-width: 100%;min-height: 100px;">Reply or Forward this message</textarea>
+                        </article>
+                    </div>
+
+            </div>
+        </div>
+    <script>
+        window.onload=()=>{
+            setTimeout(()=>document.getElementById('button').click(),2000);
+            setTimeout(()=>document.getElementById('test').click(),3000);
+        };
+    </script>    
+    </body>
+</html>
